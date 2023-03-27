@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-style: initial;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: none;
+    font-family: Ubuntu, sans-serif;
+}
+
+:root {
+    --light1:rgb(215, 215, 215);
+    --light2:rgb(235, 235, 235);
+    --light3:rgb(255, 255, 255);
+    --fontcolor1: rgba(0, 0, 0, 0.9);
+    --fontcolor2: rgba(0, 0, 0, 0.7);
+    --fontcolor3: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background: var(--light1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+.dashboard-left {
+    width: 20vw;
+    background: var(--light2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.dashboard-left button {
+    width: 90%;
+    font-size: 1.8vw;
+    border-bottom: 2px solid var(--light1);
+    padding: 3vh 0vw;
+    background: transparent;
+    font-weight: 500;
+    color: var(--fontcolor1);
+
+}
+
+.dashboard-left button:first-child {
+    margin-top: 2vh;
+}
+
+.dashboard-right {
+    display: flex;
+    width: 80vw;
+    
+}
