@@ -19,6 +19,8 @@
     --fontcolor1: rgba(0, 0, 0, 0.9);
     --fontcolor2: rgba(0, 0, 0, 0.7);
     --fontcolor3: rgba(0, 0, 0, 0.5);
+    --color1: rgb(212, 33, 212);
+    --color2: rgb(240, 104, 240);
 }
 
 body {
@@ -61,5 +63,92 @@ body {
 .dashboard-right {
     display: flex;
     width: 80vw;
-    
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+
+/*TV's Online*/
+
+
+
+
+.tvs-online {
+    width: 76vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.tittle {
+    font-size: 3vw;
+    font-weight: 500;
+    color: var(--fontcolor1);
+}
+
+.tvs-flow {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.tv-box {
+    width: 15vw;
+    background: var(--light2);
+    padding: 2vh 2vw;
+    border-radius: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 3vh;
+}
+
+.tv-box h2 {
+    font-size: 2vw;
+    font-weight: 600;
+    color: var(--fontcolor1);
+}
+
+.tv-box h3 {
+    font-size: 1.5vw;
+    color: var(--fontcolor2);
+    margin-top: 1vh;
+}
+
+.tv-box button {
+    width: 100%;
+    font-size: 1.5vw; 
+    font-weight: 500;
+    color: var(--light3);
+    background: linear-gradient(45deg,var(--color1),var(--color2));
+    padding: 2vh 0vw;
+    margin-top: 2vh;
+    border-radius: 30px;
+    transition: 0.3s ease all;
+}
+
+.tv-box button:hover {
+    letter-spacing: 8px;
+    cursor: pointer;
+}
+
+.edit-area {
+    position: fixed;
+    width: 76vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--light2);
+    border-radius: 60px;    
 }
