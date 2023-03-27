@@ -8,30 +8,27 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
-    <script
-      src="https://kit.fontawesome.com/3f3417947e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/0997ab0a05.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="dashboard.css">
     <title>Dashboard</title>
   </head>
 <body>
     <section class="dashboard-left">
-        <button>
+        <button id="tvs-btt">
             TV's Online
         </button>
         <button>
-            Anuncios Online
+            Criar Anuncio
         </button>
         <button>
-            Preview
+            Adicionar Filme
         </button>
         
     </section>
 
     <section class="dashboard-right">
-      <main class="tvs-online">
+      <main class="tvs-online" id="tvs-online">
         <h2 class="tittle">
           TV's Online
         </h2>
@@ -39,32 +36,354 @@
           <div class="tv-box">
             <h2>Tv 1</h2>
             <h3>Filme Exibido</h3>
-            <button>Editar</button>
+            <button id="editar-btn1">Editar</button>
           </div>
           <div class="tv-box">
             <h2>Tv 2</h2>
             <h3>Filme Exibido</h3>
-            <button>Editar</button>
+            <button id="editar-btn2">Editar</button>
           </div>
           <div class="tv-box">
             <h2>Tv 3</h2>
             <h3>Filme Exibido</h3>
-            <button>Editar</button>
+            <button id="editar-btn3">Editar</button>
           </div>
           <div class="tv-box">
             <h2>Tv 4</h2>
             <h3>Filme Exibido</h3>
-            <button>Editar</button>
+            <button id="editar-btn4">Editar</button>
           </div>
           <div class="tv-box">
             <h2>Tv 5</h2>
             <h3>Filme Exibido</h3>
-            <button>Editar</button>
+            <button id="editar-btn5">Editar</button>
           </div>
         </main>
-        <main class="edit-area">
-          
+          <main class="edit-area">
+            <div class="top-area">
+              <button id="fechar-btn">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <main class="film-select">
+              <h2>Escolha o Filme Exibido:</h2>
+              <select name="" id="">
+                <option>Jhon Wick</option>
+                <option>Shazam</option>
+                <option>sadasd</option>
+                <option>dasda</option>
+                <option>dsad</option>
+              </select>
+
+              <div class="preview-ad">
+                <h2>Preview Anunciantes</h2>
+                <div class="ad-flow">
+                  <div class="principal-ads">
+                    <img src="/logo.png" alt="">
+                    <img src="/logo_wbr.jpg" alt="">
+                  </div>
+
+                  <div class="ad-box">
+                    <img src="/logo2.png" alt="">
+                  </div>
+                  <div class="ad-box">
+                    <img src="/logo2.png" alt="">
+                  </div>
+                  <div class="ad-box">
+                    <img src="/logo2.png" alt="">
+                  </div>
+                  <div class="ad-box">
+                    <img src="/logo2.png" alt="">
+                  </div>
+                  <div class="ad-box">
+                    <img src="/logo2.png" alt="">
+                  </div>
+                  <div class="ad-box">
+                    <img src="/logo2.png" alt="">
+                  </div>
+                  <div class="ad-box">
+                    <img src="/logo2.png" alt="">
+                  </div>
+                  <div class="ad-box">
+                    <img src="/logo2.png" alt="">
+                  </div>
+                  <div class="ad-box">
+                    <img src="/logo2.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </main>
+
+            <main class="ad-select">
+              <div class="principal-ads">
+                <div class="ad-option">
+                  <select>
+                    <option>Criar Ideias</option>
+                    <option>Criar Ideias</option>
+                    <option>Criar Ideias</option>
+                    <option>Criar Ideias</option>
+                  </select>
+                </div>
+                <div class="ad-option">
+                  <select>
+                    <option>Criar Ideias</option>
+                    <option>Criar Ideias</option>
+                    <option>Criar Ideias</option>
+                    <option>Criar Ideias</option>
+                  </select>
+                </div>
+              </div>
+              <div class="ad-option">
+                <select>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                </select>
+              </div>
+              <div class="ad-option">
+                <select>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                </select>
+              </div>
+              <div class="ad-option">
+                <select>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                </select>
+              </div>
+              <div class="ad-option">
+                <select>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                </select>
+              </div>
+              <div class="ad-option">
+                <select>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                </select>
+              </div>
+              <div class="ad-option">
+                <select>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                </select>
+              </div>
+              <div class="ad-option">
+                <select>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                </select>
+              </div>
+              <div class="ad-option">
+                <select>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                </select>
+              </div>
+              <div class="ad-option">
+                <select>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                  <option>Criar Ideias</option>
+                </select>
+              </div>
+            </main>
+          </main>
+      </main>
+
+
+
+
+      <main class="add-ads">
+        <main class="ads-left">
+          <h2>Anunciantes Disponiveis</h2>
+          <div class="ads-wrap">
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="ad-box2">
+              <img src="/logo2.png" alt="">
+              <div class="onoff"></div>
+              <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            
+          </div>
+        </main>
+        <main class="ads-right">
+          <h2>Nome Do Anunciante</h2>
+          <input class="input-name" type="text" placeholder="Digite o Nome">
+          <input class="input-file" type="file" placeholder="Adicionar Logo">
+          <button>Adicionar</button>
         </main>
       </main>
+
+      <main class="add-film">
+        <h2>Adicionar Filme</h2>
+        <input type="text" class="input-name" placeholder="Digite o Nome">
+        <h2>Fundo Do Filme</h2>
+        <input class="input-file" type="file">
+        <h2>Video/Trailer do Filme</h2>
+        <input class="input-file" type="file">
+        <button>Adicionar Filme</button>
+        <main class="film-flow">
+          <div class="film-box">
+            <h2>Nome</h2>
+            <h3>Adicionado dia ##/##</h3>
+            <button>Apagar</button>
+          </div>
+          <div class="film-box">
+            <h2>Nome</h2>
+            <h3>Adicionado dia ##/##</h3>
+            <button>Apagar</button>
+          </div>
+          <div class="film-box">
+            <h2>Nome</h2>
+            <h3>Adicionado dia ##/##</h3>
+            <button>Apagar</button>
+          </div>
+          <div class="film-box">
+            <h2>Nome</h2>
+            <h3>Adicionado dia ##/##</h3>
+            <button>Apagar</button>
+          </div>
+        </main>
+
+      </main>
     </section>
+    <script>
+
+
+
+
+//Edit-area
+const editArea = document.querySelector(".edit-area");
+
+const editarBtn1 = document.querySelector("#editar-btn1");
+const editarBtn2 = document.querySelector("#editar-btn2");
+const editarBtn3 = document.querySelector("#editar-btn3");
+const editarBtn4 = document.querySelector("#editar-btn4");
+const editarBtn5 = document.querySelector("#editar-btn5");
+const fecharBtn = document.querySelector("#fechar-btn");
+
+editarBtn1.addEventListener("click", () => {
+    editArea.style.display = "flex";
+});
+editarBtn2.addEventListener("click", () => {
+    editArea.style.display = "flex";
+});
+editarBtn3.addEventListener("click", () => {
+    editArea.style.display = "flex";
+});
+editarBtn4.addEventListener("click", () => {
+    editArea.style.display = "flex";
+});
+editarBtn5.addEventListener("click", () => {
+    editArea.style.display = "flex";
+});
+
+fecharBtn.addEventListener("click", () => {
+    editArea.style.display = "none";
+})
+    </script>
 </body>
