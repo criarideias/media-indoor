@@ -315,7 +315,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
     position: relative;
-    display: none;
+    /*display: none;*/
 }
 
 .ads-left {
@@ -480,6 +480,7 @@ body {
     align-items: center;
     position: relative;
     overflow-y: scroll;
+    display: none;
 }
 
 .add-film h2 {
