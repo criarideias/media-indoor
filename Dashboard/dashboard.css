@@ -1,568 +1,510 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 * {
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-style: initial;
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: none;
-    font-family: Ubuntu, sans-serif;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-style: initial;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: none;
+  font-family: Ubuntu, sans-serif;
 }
 
 :root {
-    --light1:rgb(215, 215, 215);
-    --light2:rgb(235, 235, 235);
-    --light3:rgb(255, 255, 255);
-    --fontcolor1: rgba(0, 0, 0, 0.9);
-    --fontcolor2: rgba(0, 0, 0, 0.7);
-    --fontcolor3: rgba(0, 0, 0, 0.5);
-    --color1: rgb(255, 0, 0);
-    --color2: rgb(253, 68, 68);
+  --light1: rgb(215, 215, 215);
+  --light2: rgb(235, 235, 235);
+  --light3: rgb(255, 255, 255);
+  --fontcolor1: rgba(0, 0, 0, 0.9);
+  --fontcolor2: rgba(0, 0, 0, 0.7);
+  --fontcolor3: rgba(0, 0, 0, 0.5);
+  --color1: rgb(255, 0, 0);
+  --color2: rgb(253, 68, 68);
 }
 
 body {
-    background: var(--light1);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  background: var(--light1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-
 .dashboard-left {
-    width: 20vw;
-    background: var(--light2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    border-top-right-radius: 35px;
-    border-bottom-right-radius: 35px;
+  width: 20vw;
+  background: var(--light2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
 }
 
 .dashboard-left button {
-    width: 90%;
-    font-size: 1.8vw;
-    border-bottom: 2px solid var(--light1);
-    padding: 3vh 0vw;
-    background: transparent;
-    font-weight: 500;
-    color: var(--fontcolor1);
-
+  width: 90%;
+  font-size: 1.8vw;
+  border-bottom: 2px solid var(--light1);
+  padding: 3vh 0vw;
+  background: transparent;
+  font-weight: 500;
+  color: var(--fontcolor1);
 }
 
 .dashboard-left button:first-child {
-    margin-top: 2vh;
+  margin-top: 2vh;
 }
 
 .dashboard-right {
-    display: flex;
-    width: 80vw;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
+  display: flex;
+  width: 80vw;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }
-
-
 
 /*TV's Online*/
 
-
-
-
 .tvs-online {
-    width: 76vw;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    display: none;
+  width: 76vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .tittle {
-    font-size: 3vw;
-    font-weight: 500;
-    color: var(--fontcolor1);
+  font-size: 3vw;
+  font-weight: 500;
+  color: var(--fontcolor1);
 }
 
 .tvs-flow {
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 5vh;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5vh;
 }
 
 .tv-box {
-    width: 15vw;
-    background: var(--light2);
-    padding: 2vh 2vw;
-    border-radius: 45px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    margin-top: 3vh;
+  width: 15vw;
+  background: var(--light2);
+  padding: 2vh 2vw;
+  border-radius: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 3vh;
 }
 
 .tv-box h2 {
-    font-size: 2vw;
-    font-weight: 600;
-    color: var(--fontcolor1);
+  font-size: 2vw;
+  font-weight: 600;
+  color: var(--fontcolor1);
 }
 
 .tv-box h3 {
-    font-size: 1.5vw;
-    color: var(--fontcolor2);
-    margin-top: 1vh;
+  font-size: 1.5vw;
+  color: var(--fontcolor2);
+  margin-top: 1vh;
 }
 
 .tv-box button {
-    width: 100%;
-    font-size: 1.5vw; 
-    font-weight: 500;
-    color: var(--light3);
-    background: linear-gradient(45deg,var(--color1),var(--color2));
-    padding: 2vh 0vw;
-    margin-top: 2vh;
-    border-radius: 30px;
-    transition: 0.3s ease all;
+  width: 100%;
+  font-size: 1.5vw;
+  font-weight: 500;
+  color: var(--light3);
+  background: linear-gradient(45deg, var(--color1), var(--color2));
+  padding: 2vh 0vw;
+  margin-top: 2vh;
+  border-radius: 30px;
+  transition: 0.3s ease all;
 }
 
 .tv-box button:hover {
-    letter-spacing: 8px;
-    cursor: pointer;
+  letter-spacing: 8px;
+  cursor: pointer;
 }
-
-
 
 /*edit-area*/
 
-
 .edit-area {
-    position: fixed;
-    width: 76vw;
-    height: 90vh;
-    display: none;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    background: var(--light2);
-    border-radius: 60px;    
+  position: fixed;
+  width: 76vw;
+  height: 90vh;
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background: var(--light2);
+  border-radius: 60px;
 }
 
 .top-area {
-    width: 70vw;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 2vh 0vw;
+  width: 70vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2vh 0vw;
 }
 
 .top-area button {
-    font-size: 2vw;
-    cursor: pointer;
+  font-size: 2vw;
+  cursor: pointer;
 }
 
 .film-select {
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .film-select h2 {
-    font-size: 1.5vw;
-    color: var(--fontcolor1);
-    font-weight: 500;
+  font-size: 1.5vw;
+  color: var(--fontcolor1);
+  font-weight: 500;
 }
 
 .film-select select {
-    font-size: 1.5vw;
-    background: linear-gradient(45deg,var(--color1),var(--color2));
-    color: var(--light3);
-    width: 40%;
-    padding: 1.5vh 2vw;
-    margin-top: 1vh;
-    border-radius: 15px;
+  font-size: 1.5vw;
+  background: linear-gradient(45deg, var(--color1), var(--color2));
+  color: var(--light3);
+  width: 40%;
+  padding: 1.5vh 2vw;
+  margin-top: 1vh;
+  border-radius: 15px;
 }
 
 .film-select option {
-    background-color: linear-gradient(45deg,var(--color1),var(--color2));
-    color: var(--fontcolor1);
+  background-color: linear-gradient(45deg, var(--color1), var(--color2));
+  color: var(--fontcolor1);
 }
-
 
 .preview-ad {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
 }
 
-
 .ad-flow {
-    display: flex;
-    width: 90%;
-    padding: 2vh 2vw;
-    background: var(--light1);
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    border-radius: 40px;
-    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
-    margin-top: 4vh;
+  display: flex;
+  width: 90%;
+  padding: 2vh 2vw;
+  background: var(--light1);
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: 40px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+  margin-top: 4vh;
 }
 
 .principal-ads {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2vh;
 }
 
 .principal-ads img {
-    width: 10vw;
+  width: 10vw;
 }
 
 .ad-box {
-    width: 9.2vw;
-    height: 4.5vw;
-    background: var(--light2);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2vh;
+  width: 9.2vw;
+  height: 4.5vw;
+  background: var(--light2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2vh;
 }
 
 .ad-box img {
-    width: 80%;
+  width: 80%;
 }
 
 .ad-select {
-    width: 45%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 18vh;
+  width: 45%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 18vh;
 }
 
 .ad-option {
-    width: 9.2vw;
-    display: flex;
-    align-items: center;
-    padding: 2vh 0vw;
-    margin-top: 2vh;
+  width: 9.2vw;
+  display: flex;
+  align-items: center;
+  padding: 2vh 0vw;
+  margin-top: 2vh;
 }
 
 .ad-option select {
-    font-size: 1vw;
-    background: linear-gradient(45deg,var(--color1),var(--color2));
-    color: var(--light3);
-    width: 100%;
-    padding: 1.5vh 2vw;
-    margin-top: 1vh;
-    border-radius: 15px;
+  font-size: 1vw;
+  background: linear-gradient(45deg, var(--color1), var(--color2));
+  color: var(--light3);
+  width: 100%;
+  padding: 1.5vh 2vw;
+  margin-top: 1vh;
+  border-radius: 15px;
 }
 
 .ad-option option {
-    background-color: linear-gradient(45deg,var(--color1),var(--color2));
-    color: var(--fontcolor1);
+  background-color: linear-gradient(45deg, var(--color1), var(--color2));
+  color: var(--fontcolor1);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*Adicionar Anuncio*/
 
-
-
-
-
-
-
 .add-ads {
-    width: 76vw;
-    height: 90vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: relative;
-    /*display: none;*/
+  width: 76vw;
+  height: 90vh;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  display: none;
 }
 
-.ads-left {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+.ads-left-original {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.ads-left h2 {
-    font-size: 2.5vw;
-    align-items: center;
-    color: var(--fontcolor1);
+.ads-left-original h2 {
+  font-size: 2.5vw;
+  align-items: center;
+  color: var(--fontcolor1);
 }
 
-.ads-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-around;
-    width: 90%;
-    margin-top: 2vh;
-    height: 90vh;
-    overflow-y: scroll;
+.ads-wrap-original {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 90%;
+  margin-top: 2vh;
+  height: 90vh;
+  overflow-y: scroll;
 }
 
-.ad-box2 {
-    width: 40%;
-    background: var(--light3);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2vh 1vw;
-    margin-top: 2vh;
-    border-radius: 30px;
-    transition: 0.3s ease all;
-    position: relative;
+.ads-wrap-original div {
+  width: 40%;
+  background: var(--light3);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vh 1vw;
+  margin-top: 2vh;
+  border-radius: 30px;
+  transition: 0.3s ease all;
+  position: relative;
 }
 
-.ad-box2 img {
-    width: 80%;
+.ad-box-original img {
+  width: 80%;
 }
 
-.ad-box2:hover {
-    box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.3);
+.ad-box-original:hover {
+  box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.3);
 }
 
 .onoff {
-    position: absolute;
-    width: 0.8vw;
-    height: 0.8vw;
-    background: rgb(0, 255, 0);
-    top: 0;
-    left: 0;
-    margin-top: 1vh;
-    margin-left: 0.5vw;
-    border-radius: 100px;
-    z-index: 999;
+  position: absolute;
+  width: 0.8vw;
+  height: 0.8vw;
+  background: rgb(0, 255, 0);
+  top: 0;
+  left: 0;
+  margin-top: 1vh;
+  margin-left: 0.5vw;
+  border-radius: 100px;
+  z-index: 999;
 }
 
 .delete {
-    width: 3vw;
-    height: 3vw;
-    border-radius: 100px;
-    background: red;
-    color: var(--light3);
-    font-size: 1.5vw;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 0.8vh;
-    margin-right: 0.4vw;
-    box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transition: 0.3s ease all;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 100px;
+  background: red;
+  color: var(--light3);
+  font-size: 1.5vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0.8vh;
+  margin-right: 0.4vw;
+  box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: 0.3s ease all;
 }
 
 .ad-box2:hover .delete {
-    opacity: 1;
-    cursor: pointer;
+  opacity: 1;
+  cursor: pointer;
 }
 
-
-
 .ads-right {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .ads-right h2 {
-    font-size: 1.8vw;
-    align-items: center;
-    color: var(--fontcolor1);
+  font-size: 1.8vw;
+  align-items: center;
+  color: var(--fontcolor1);
 }
 
 .input-name {
-    width: 80%;
-    font-size: 1.5vw;
-    background: transparent;
-    border: 6px solid var(--color1);
-    padding: 2vh 1vw;
-    margin-top: 2vh;
-    border-radius: 15px;
+  width: 80%;
+  font-size: 1.5vw;
+  background: transparent;
+  border: 6px solid var(--color1);
+  padding: 2vh 1vw;
+  margin-top: 2vh;
+  border-radius: 15px;
 }
 
-
 .ads-right button {
-    width: 80%;
-    background: linear-gradient(45deg, var(--color1),var(--color2));
-    padding: 2vh 0vw;
-    font-size: 1.5vw;
-    font-weight: 500;
-    color: var(--light3);
-    border-radius: 15px;
-    margin-top: 2vh;
-    transition: 0.3s ease all;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+  width: 80%;
+  background: linear-gradient(45deg, var(--color1), var(--color2));
+  padding: 2vh 0vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+  color: var(--light3);
+  border-radius: 15px;
+  margin-top: 2vh;
+  transition: 0.3s ease all;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
 }
 
 .ads-right button:hover {
-    letter-spacing: 8px;
-    cursor: pointer;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  letter-spacing: 8px;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .input-file {
-    font-size: 1.3vw;
-    margin-top: 2vh;
-    padding: 5vh 1vw;
+  font-size: 1.3vw;
+  margin-top: 2vh;
+  padding: 5vh 1vw;
 }
-
-
-
-
-
-
-
-
-
-
 
 /*Adicionar Filme*/
 
-
-
-
-
-
-
-
-
 .add-film {
-    width: 46vw;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    overflow-y: scroll;
-    display: none;
+  width: 46vw;
+  height: 90vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-y: scroll;
 }
 
 .add-film h2 {
-    font-size: 1.8vw;
-    font-weight: 500;
-    color: var(--fontcolor1);
-    margin-top: 2vh;
+  font-size: 1.8vw;
+  font-weight: 500;
+  color: var(--fontcolor1);
+  margin-top: 2vh;
 }
 
 .add-film button {
-    width: 80%;
-    background: linear-gradient(45deg, var(--color1),var(--color2));
-    padding: 2vh 0vw;
-    font-size: 1.5vw;
-    font-weight: 500;
-    color: var(--light3);
-    border-radius: 15px;
-    margin-top: 4vh;
-    transition: 0.3s ease all;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+  width: 80%;
+  background: linear-gradient(45deg, var(--color1), var(--color2));
+  padding: 2vh 0vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+  color: var(--light3);
+  border-radius: 15px;
+  margin-top: 4vh;
+  transition: 0.3s ease all;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
 }
 
 .add-film button:hover {
-    letter-spacing: 8px;
-    cursor: pointer;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  letter-spacing: 8px;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
-
 
 .film-flow {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-top: 4vh;
-    margin-bottom: 5vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 4vh;
+  margin-bottom: 5vh;
 }
 
-
-
 .film-box {
-    width: 40%;
-    background: var(--light3);
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 35px;
-    padding: 2vh 1.5vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2vh;
+  width: 40%;
+  background: var(--light3);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 35px;
+  padding: 2vh 1.5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2vh;
 }
 
 .film-box h2 {
-    font-size: 2vw;
-    color: var(--fontcolor1);
+  font-size: 2vw;
+  color: var(--fontcolor1);
 }
 
 .film-box h3 {
-    font-size: 1.5vw;
-    color: var(--fontcolor2);
-    margin-top: 2vh;
+  font-size: 1.5vw;
+  color: var(--fontcolor2);
+  margin-top: 2vh;
 }
 
 .film-box button {
-    width: 80%;
-    background: linear-gradient(45deg, var(--color1),var(--color2));
-    padding: 2vh 0vw;
-    font-size: 1.5vw;
-    font-weight: 500;
-    color: var(--light3);
-    border-radius: 15px;
-    margin-top: 2vh;
-    transition: 0.3s ease all;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+  width: 80%;
+  background: linear-gradient(45deg, var(--color1), var(--color2));
+  padding: 2vh 0vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+  color: var(--light3);
+  border-radius: 15px;
+  margin-top: 2vh;
+  transition: 0.3s ease all;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
 }
-
 
 .film-box button:hover {
-    letter-spacing: 8px;
-    cursor: pointer;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  letter-spacing: 8px;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
-
