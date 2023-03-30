@@ -1,2 +1,6 @@
 uploads
 env.php
+
+.env
+.DS_store
+*/DS_Store
