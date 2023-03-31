@@ -1,7 +1,6 @@
 <?php
 
 include("../conexao.php");
-include("actions/adicionarFilme.php");
 
 $sqlFilmes = "SELECT * FROM `filmes`";
 $resultFilmes = mysqli_query($con, $sqlFilmes);
@@ -30,7 +29,6 @@ $resultFilmes = mysqli_query($con, $sqlFilmes);
   </section>
 
   <section class="dashboard-right">
-    <iframe name="hiddenFrame" hidden></iframe>
     <main class="tvs-online">
       <h2 class="tittle">TV's Online</h2>
       <main class="tvs-flow">
@@ -343,7 +341,7 @@ $resultFilmes = mysqli_query($con, $sqlFilmes);
           </div>
         </div>
       </main>
-      <main class="ads-right">
+      <main class="ads-right-original">
         <h2>Nome Do Anunciante</h2>
         <input class="input-name" type="text" placeholder="Digite o Nome" />
         <input class="input-file" type="file" placeholder="Adicionar Logo" />
@@ -352,7 +350,7 @@ $resultFilmes = mysqli_query($con, $sqlFilmes);
     </main>
 
     <main class="add-film">
-      <form id="adicionarFilmeForm" method="POST" enctype="multipart/form-data" target="hiddenFrame">
+      <form id="adicionarFilmeForm" method="POST" action="actions/adicionarFilme.php" enctype="multipart/form-data">
         <h2>Adicionar Filme</h2>
 
         <label>Nome:</label>
@@ -372,7 +370,8 @@ $resultFilmes = mysqli_query($con, $sqlFilmes);
         <script>
           // Botão de apagar filme
           function handleDeleteClick(id) {
-            window.location.href = `apagarFilme.php?id=${id}`;
+            const ajax = new XMLHttpRequest();
+            window.location.href = `actions/apagarFilme.php?id=${id}`;
           };
         </script>
         <?php
@@ -395,7 +394,7 @@ $resultFilmes = mysqli_query($con, $sqlFilmes);
       </main>
     </main>
   </section>
-  <script src="dashboard.js"></script>
+  <script src="./dashboard.js"></script>
 </body>
 
 </html>
