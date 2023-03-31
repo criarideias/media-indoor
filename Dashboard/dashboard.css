@@ -414,7 +414,7 @@ body {
 
 .input-file {
   font-size: 1.3vw;
-  margin-top: 2vh;
+  margin-block: 0 2vh;
   padding: 5vh 1vw;
 }
 
@@ -430,11 +430,34 @@ body {
   overflow-y: scroll;
 }
 
+.add-film form {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.add-film input {
+  margin-bottom: 3vh;
+}
+
 .add-film h2 {
-  font-size: 1.8vw;
+  font-size: 2.5vw;
   font-weight: 500;
   color: var(--fontcolor1);
   margin-top: 2vh;
+  margin-bottom: 5vh;
+  text-align: center;
+}
+
+.add-film label {
+  font-size: 1.8vw;
+  display: block;
+  text-align: center;
+  margin: 0;
 }
 
 .add-film button {
@@ -488,6 +511,7 @@ body {
   font-size: 1.5vw;
   color: var(--fontcolor2);
   margin-top: 2vh;
+  text-align: center;
 }
 
 .film-box button {

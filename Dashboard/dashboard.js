@@ -1,4 +1,4 @@
-// Menu buttons
+// Botões do menu
 const tvsBtn = document.querySelector("#tvs-btn");
 const createAdBtn = document.querySelector("#create-ad-btn");
 const addMovieBtn = document.querySelector("#add-movie-btn");
@@ -21,7 +21,7 @@ buttons.forEach((btn, indexBtn) => {
   });
 });
 
-//Edit-area
+// Area de edição
 const editArea = document.querySelector(".edit-area");
 const editarBtns = document.querySelectorAll("#editar-btn");
 const fecharBtn = document.querySelector("#fechar-btn");
