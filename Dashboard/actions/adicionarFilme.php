@@ -46,9 +46,5 @@ if ($sucesso) {
 ?>
 <script>
     window.alert("<?php echo ($mensagem) ?>");
-    <?php
-    if ($sucesso) {
-        echo 'window.location.href = "../index.php?adicionarFilme";';
-    }
-    ?>
+    window.location.href = "../index.php?adicionarFilme";
 </script>

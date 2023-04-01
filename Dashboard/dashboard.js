@@ -21,11 +21,13 @@ buttons.forEach((btn, indexBtn) => {
   });
 });
 
-// Leitor da URL que verifica se um painel pode ser lido
+// Leitor da URL que verifica se um painel deverá ser aberto automaticamente
 const url = window.location.href;
 
 if (url.includes("adicionarFilme")) {
   addMovieBtn.click();
+} else if (url.includes("adicionarAnunciante")) {
+  createAdBtn.click();
 }
 
 // Area de edição

@@ -5,6 +5,9 @@ include("../conexao.php");
 $sqlFilmes = "SELECT * FROM `filmes`";
 $resultFilmes = mysqli_query($con, $sqlFilmes);
 
+$sqlAnunciantes = "SELECT * FROM `anunciantes`";
+$resultAnunciantes = mysqli_query($con, $sqlAnunciantes);
+
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +18,7 @@ $resultFilmes = mysqli_query($con, $sqlFilmes);
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <script src="https://kit.fontawesome.com/0997ab0a05.js" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./dashboard.css" />
   <title>Dashboard</title>
 </head>
@@ -213,144 +215,41 @@ $resultFilmes = mysqli_query($con, $sqlFilmes);
       <main class="ads-left-original">
         <h2>Anunciantes Disponiveis</h2>
         <div class="ads-wrap-original">
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
+          <script>
+            // Botão de apagar filme
+            function handleDeleteAnunciante(id) {
+              window.location.href = `actions/apagarAnunciante.php?id=${id}`;
+            };
+          </script>
+          <?php
+
+          while ($anunciante = mysqli_fetch_array($resultAnunciantes)) {
+            echo ('
+            <div class="ad-box-original">
+            <img src="../uploads/' . $anunciante["banner"] . '" />
             <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
+            <button onClick="handleDeleteAnunciante(' . $anunciante["id"] . ')" class="delete">
+              <i class="fa-solid fa-trash"></i>
             </button>
           </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
-          <div class="ad-box-original">
-            <img src="../assets/logo2.png" alt="" />
-            <div class="onoff"></div>
-            <button class="delete">
-              <i class="fa-regular fa-trash-can"></i>
-            </button>
-          </div>
+            ');
+          }
+
+          ?>
         </div>
       </main>
       <main class="ads-right-original">
-        <h2>Nome Do Anunciante</h2>
-        <input class="input-name" type="text" placeholder="Digite o Nome" />
-        <input class="input-file" type="file" placeholder="Adicionar Logo" />
-        <button>Adicionar</button>
+        <form method="POST" action="actions/adicionarAnunciante.php" enctype="multipart/form-data">
+          <h2>Nome Do Anunciante</h2>
+          <input name="nomeAnunciante" class="input-name" type="text" placeholder="Digite o Nome" autocomplete="off" />
+          <input name="bannerAnunciante" class="input-file" type="file" placeholder="Adicionar Logo" autocomplete="off" accept="image/*" required />
+          <button type="submit">Adicionar</button>
+        </form>
       </main>
     </main>
 
     <main class="add-film">
-      <form id="adicionarFilmeForm" method="POST" action="actions/adicionarFilme.php" enctype="multipart/form-data">
+      <form method="POST" action="actions/adicionarFilme.php" enctype="multipart/form-data">
         <h2>Adicionar Filme</h2>
 
         <label>Nome:</label>
@@ -370,7 +269,6 @@ $resultFilmes = mysqli_query($con, $sqlFilmes);
         <script>
           // Botão de apagar filme
           function handleDeleteClick(id) {
-            const ajax = new XMLHttpRequest();
             window.location.href = `actions/apagarFilme.php?id=${id}`;
           };
         </script>

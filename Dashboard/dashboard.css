@@ -32,6 +32,16 @@ body {
   height: 100vh;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
 .dashboard-left {
   width: 20vw;
   background: var(--light2);
@@ -227,7 +237,7 @@ body {
   width: 10vw;
 }
 
-.ad-box {
+.ad-box-original {
   width: 9.2vw;
   height: 4.5vw;
   background: var(--light2);
@@ -239,7 +249,7 @@ body {
   margin-top: 2vh;
 }
 
-.ad-box img {
+.ad-box-original img {
   width: 80%;
 }
 
@@ -360,8 +370,8 @@ body {
   margin-top: 0.8vh;
   margin-right: 0.4vw;
   box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.3);
-  opacity: 0;
   transition: 0.3s ease all;
+  cursor: pointer;
 }
 
 .ad-box2:hover .delete {
@@ -404,6 +414,7 @@ body {
   margin-top: 2vh;
   transition: 0.3s ease all;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .ads-right-original button:hover {
@@ -428,16 +439,6 @@ body {
   align-items: center;
   position: relative;
   overflow-y: scroll;
-}
-
-.add-film form {
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
 }
 
 .add-film input {
