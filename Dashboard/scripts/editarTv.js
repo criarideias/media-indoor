@@ -3,9 +3,6 @@ const mainAds = document.querySelector("#main-ads");
 const ads = document.querySelector("#ads");
 const adThumbs = document.querySelectorAll("#anunciante-thumb");
 
-// Host do servidor que a aplicação fará requests (Ex: http://localhost/api)
-const hostServidor = `http://localhost/media-indoor/`;
-
 // Variáel armazena todos os anunciantes que foram ou serão carregados
 const anunciantes = {
   0: {
@@ -30,7 +27,7 @@ async function handleSelectChange(e) {
   // Caso o anunciante ainda não esteja salvo
   if (!anunciantes[idAnunciante]) {
     const anuncianteRequest = await fetch(
-      `${hostServidor}api/GET/getAnunciante.php?id=${idAnunciante}`
+      `../api/GET/getAnunciante.php?id=${idAnunciante}`
     );
 
     if (anuncianteRequest.status !== 200) return;
@@ -100,7 +97,7 @@ let tv = {
 
 // Função ativada quando o usuário clica em Editar
 async function definirTv(id) {
-  const tvRequest = await fetch(`${hostServidor}api/GET/getTv.php?id=${id}`);
+  const tvRequest = await fetch(`../api/GET/getTv.php?id=${id}`);
   const tvResponse = await tvRequest.json();
 
   tv = {
@@ -110,7 +107,7 @@ async function definirTv(id) {
   // Puxar os dados do filme, caso setado
   if (tv["filme"] !== "SLIDER") {
     const filmeRequest = await fetch(
-      `${hostServidor}api/GET/getFilme.php?id=${tv["filme"]}`
+      `../api/GET/getFilme.php?id=${tv["filme"]}`
     );
     tv["filme"] = await filmeRequest.json();
   }
@@ -143,7 +140,7 @@ async function definirTv(id) {
   tv.anunciantes.principais.forEach(async (anunciante, index) => {
     if (anunciante === 0) return;
     const anuncianteRequest = await fetch(
-      `${hostServidor}api/GET/getAnunciante.php?id=${anunciante}`
+      `../api/GET/getAnunciante.php?id=${anunciante}`
     );
 
     if (anuncianteRequest.status !== 200) return;
@@ -161,7 +158,7 @@ async function definirTv(id) {
   tv.anunciantes.secundarios.forEach(async (anunciante, index) => {
     if (anunciante === 0) return;
     const anuncianteRequest = await fetch(
-      `${hostServidor}api/GET/getAnunciante.php?id=${anunciante}`
+      `../api/GET/getAnunciante.php?id=${anunciante}`
     );
 
     if (anuncianteRequest.status !== 200) return;
@@ -207,17 +204,14 @@ async function salvarTv() {
     anunciantes: anunciantesDefinidos,
   };
 
-  const tvRequest = await fetch(
-    `${hostServidor}api/POST/editarTv.php?id=${tv.id}`,
-    {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-      method: "POST",
-    }
-  );
+  const tvRequest = await fetch(`../api/POST/editarTv.php?id=${tv.id}`, {
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+    method: "POST",
+  });
 
   if (tvRequest.status === 200) {
     window.alert("TV salva com sucesso!");

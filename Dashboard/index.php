@@ -29,7 +29,7 @@ include("./actions/getDadosIndex.php");
       <h2 class="tittle">TV's Online</h2>
       <main class="tvs-flow">
         <?php
-        while ($tv = $resultTvs->fetch_array()) {
+        foreach ($arrayTvs as $tv) {
           $nomeDoFilme = "SLIDER";
 
           if ($tv["filme"] != "SLIDER") {
@@ -160,10 +160,16 @@ include("./actions/getDadosIndex.php");
           <?php
 
           foreach ($arrayAnunciantes as $anunciante) {
+
+            $off = "";
+
+            if (!in_array($anunciante["id"], $arrayAnunciantesUsados)) {
+              $off = "off";
+            }
             echo ('
             <div class="ad-box-original">
             <img src="../uploads/' . $anunciante["banner"] . '" />
-            <div class="onoff on"></div>
+            <div class="onoff ' . $off . '"></div>
             <button onClick="handleDeleteAnunciante(' . $anunciante["id"] . ')" class="delete">
               <i class="fa-solid fa-trash"></i>
             </button>

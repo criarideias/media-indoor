@@ -22,3 +22,20 @@ while ($anunciante = mysqli_fetch_array($resultAnunciantes)) {
 
 $sqlTvs = "SELECT * FROM `tvs`";
 $resultTvs = mysqli_query($con, $sqlTvs);
+
+$arrayTvs = array();
+
+while ($tv = mysqli_fetch_array($resultTvs)) {
+    $arrayTvs[] = $tv;
+}
+
+$arrayAnunciantesUsados = array();
+
+foreach ($arrayAnunciantes as $anunciante) {
+    foreach ($arrayTvs as $tv) {
+        if (str_contains($tv["anunciantes"], $anunciante["id"])) {
+            $arrayAnunciantesUsados[] = $anunciante["id"];
+            break;
+        }
+    }
+}

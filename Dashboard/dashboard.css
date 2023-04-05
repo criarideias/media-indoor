@@ -357,6 +357,10 @@ form {
   z-index: 999;
 }
 
+.ads-wrap-original div.onoff.off {
+  background: red;
+}
+
 .delete {
   width: 3vw;
   height: 3vw;
