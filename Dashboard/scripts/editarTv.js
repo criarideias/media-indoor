@@ -3,11 +3,8 @@ const mainAds = document.querySelector("#main-ads");
 const ads = document.querySelector("#ads");
 const adThumbs = document.querySelectorAll("#anunciante-thumb");
 
-// Dados da URL
-const urlAtual = window.location.href;
-const urlSplit = urlAtual.split("/");
-const parteIndex = urlSplit[urlSplit.length - 1];
-const urlDashboard = urlAtual.replace(parteIndex, "");
+// Host do servidor que a aplicação fará requests (Ex: http://localhost/api)
+const hostServidor = `http://localhost/media-indoor/`;
 
 // Variáel armazena todos os anunciantes que foram ou serão carregados
 const anunciantes = {
@@ -33,7 +30,7 @@ async function handleSelectChange(e) {
   // Caso o anunciante ainda não esteja salvo
   if (!anunciantes[idAnunciante]) {
     const anuncianteRequest = await fetch(
-      `${urlDashboard}actions/GET/getAnunciante.php?id=${idAnunciante}`
+      `${hostServidor}api/GET/getAnunciante.php?id=${idAnunciante}`
     );
 
     if (anuncianteRequest.status !== 200) return;
@@ -103,9 +100,7 @@ let tv = {
 
 // Função ativada quando o usuário clica em Editar
 async function definirTv(id) {
-  const tvRequest = await fetch(
-    `${urlDashboard}actions/GET/getTv.php?id=${id}`
-  );
+  const tvRequest = await fetch(`${hostServidor}api/GET/getTv.php?id=${id}`);
   const tvResponse = await tvRequest.json();
 
   tv = {
@@ -115,7 +110,7 @@ async function definirTv(id) {
   // Puxar os dados do filme, caso setado
   if (tv["filme"] !== "SLIDER") {
     const filmeRequest = await fetch(
-      `${urlDashboard}actions/GET/getFilme.php?id=${tv["filme"]}`
+      `${hostServidor}api/GET/getFilme.php?id=${tv["filme"]}`
     );
     tv["filme"] = await filmeRequest.json();
   }
@@ -148,7 +143,7 @@ async function definirTv(id) {
   tv.anunciantes.principais.forEach(async (anunciante, index) => {
     if (anunciante === 0) return;
     const anuncianteRequest = await fetch(
-      `${urlDashboard}actions/GET/getAnunciante.php?id=${anunciante}`
+      `${hostServidor}api/GET/getAnunciante.php?id=${anunciante}`
     );
 
     if (anuncianteRequest.status !== 200) return;
@@ -166,7 +161,7 @@ async function definirTv(id) {
   tv.anunciantes.secundarios.forEach(async (anunciante, index) => {
     if (anunciante === 0) return;
     const anuncianteRequest = await fetch(
-      `${urlDashboard}actions/GET/getAnunciante.php?id=${anunciante}`
+      `${hostServidor}api/GET/getAnunciante.php?id=${anunciante}`
     );
 
     if (anuncianteRequest.status !== 200) return;
@@ -213,7 +208,7 @@ async function salvarTv() {
   };
 
   const tvRequest = await fetch(
-    `${urlDashboard}actions/POST/editarTv.php?id=${tv.id}`,
+    `${hostServidor}api/POST/editarTv.php?id=${tv.id}`,
     {
       headers: {
         Accept: "application/json",

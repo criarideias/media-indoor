@@ -1,6 +1,6 @@
 <?php
 
-include("../../../conexao.php");
+include("../../conexao.php");
 
 $id = mysqli_real_escape_string($con, $_GET["id"]);
 
@@ -17,5 +17,5 @@ if (!$result) {
 
 <script>
     window.alert("<?php echo ($mensagemFinal) ?>");
-    window.location.href = "../../index.php?adicionarAnunciante"
+    window.location.href = "../../dashboard/index.php?adicionarAnunciante"
 </script>

@@ -1,6 +1,6 @@
 <?php
 
-include("./actions/GET/getDadosIndex.php");
+include("./actions/getDadosIndex.php");
 
 ?>
 
@@ -154,7 +154,7 @@ include("./actions/GET/getDadosIndex.php");
           <script>
             // Botão de apagar filme
             function handleDeleteAnunciante(id) {
-              window.location.href = `actions/DELETE/apagarAnunciante.php?id=${id}`;
+              window.location.href = `../api/DELETE/apagarAnunciante.php?id=${id}`;
             };
           </script>
           <?php
@@ -175,7 +175,7 @@ include("./actions/GET/getDadosIndex.php");
         </div>
       </main>
       <main class="ads-right-original">
-        <form method="POST" action="actions/POST/adicionarAnunciante.php" enctype="multipart/form-data">
+        <form method="POST" action="../api/POST/adicionarAnunciante.php" enctype="multipart/form-data">
           <h2>Nome Do Anunciante</h2>
           <input name="nomeAnunciante" class="input-name" type="text" placeholder="Digite o Nome" autocomplete="off" />
           <input name="bannerAnunciante" class="input-file" type="file" placeholder="Adicionar Logo" autocomplete="off" accept="image/*" required />
@@ -185,7 +185,7 @@ include("./actions/GET/getDadosIndex.php");
     </main>
 
     <main class="add-film">
-      <form method="POST" action="actions/POST/adicionarFilme.php" enctype="multipart/form-data">
+      <form method="POST" action="../api/POST/adicionarFilme.php" enctype="multipart/form-data">
         <h2>Adicionar Filme</h2>
 
         <label>Nome:</label>
@@ -205,7 +205,7 @@ include("./actions/GET/getDadosIndex.php");
         <script>
           // Botão de apagar filme
           function handleDeleteClick(id) {
-            window.location.href = `actions/DELETE/apagarFilme.php?id=${id}`;
+            window.location.href = `../api/DELETE/apagarFilme.php?id=${id}`;
           };
         </script>
         <?php
