@@ -1,12 +1,6 @@
 <?php
 
-include("../conexao.php");
-
-$sqlFilmes = "SELECT * FROM `filmes`";
-$resultFilmes = mysqli_query($con, $sqlFilmes);
-
-$sqlAnunciantes = "SELECT * FROM `anunciantes`";
-$resultAnunciantes = mysqli_query($con, $sqlAnunciantes);
+include("./actions/GET/getDadosIndex.php");
 
 ?>
 
@@ -34,31 +28,22 @@ $resultAnunciantes = mysqli_query($con, $sqlAnunciantes);
     <main class="tvs-online">
       <h2 class="tittle">TV's Online</h2>
       <main class="tvs-flow">
-        <div class="tv-box">
-          <h2>Tv 1</h2>
-          <h3>Filme Exibido</h3>
-          <button id="editar-btn">Editar</button>
-        </div>
-        <div class="tv-box">
-          <h2>Tv 2</h2>
-          <h3>Filme Exibido</h3>
-          <button id="editar-btn">Editar</button>
-        </div>
-        <div class="tv-box">
-          <h2>Tv 3</h2>
-          <h3>Filme Exibido</h3>
-          <button id="editar-btn">Editar</button>
-        </div>
-        <div class="tv-box">
-          <h2>Tv 4</h2>
-          <h3>Filme Exibido</h3>
-          <button id="editar-btn">Editar</button>
-        </div>
-        <div class="tv-box">
-          <h2>Tv 5</h2>
-          <h3>Filme Exibido</h3>
-          <button id="editar-btn">Editar</button>
-        </div>
+        <?php
+        while ($tv = $resultTvs->fetch_array()) {
+          $filmeExibido = array_values(array_filter($arrayFilmes, function ($filme) use ($tv) {
+            return $filme["id"] === $tv["filme"];
+          }))[0];
+
+
+          echo ('
+            <div class="tv-box">
+            <h2>Tv ' . $tv["id"] . '</h2>
+            <h3>' . $filmeExibido["nome"] . '</h3>
+            <button onClick="definirTv(' . $tv["id"] . ')" id="editar-btn">Editar</button>
+          </div>
+            ');
+        }
+        ?>
       </main>
       <main class="edit-area">
         <div class="top-area">
@@ -69,144 +54,91 @@ $resultAnunciantes = mysqli_query($con, $sqlAnunciantes);
 
         <main class="film-select">
           <h2>Escolha o Filme Exibido:</h2>
-          <select name="" id="">
+          <select id="filme-exibido">
             <option>Slider</option>
-            <option>Shazam</option>
-            <option>John Wick</option>
-            <option>dasda</option>
-            <option>dsad</option>
+            <?php
+            foreach ($arrayFilmes as $filme) {
+              echo "<option value='" . $filme["id"] . "'>" . $filme["nome"] . "</option>";
+            }
+            ?>
           </select>
 
           <div class="preview-ad">
             <h2>Preview Anunciantes</h2>
             <div class="ad-flow">
               <div class="principal-ads">
-                <img src="../assets/logo.png" alt="" />
-                <img src="../assets/logo_wbr.jpg" alt="" />
+                <img id="anunciante-thumb" src="../assets/logo.png" />
+                <img id="anunciante-thumb" src="../assets/logo_wbr.jpg" />
               </div>
 
-              <div class="ad-box">
-                <img src="../assets/logo2.png" alt="" />
+              <div class="ad-box-original">
+                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
               </div>
-              <div class="ad-box">
-                <img src="../assets/logo2.png" alt="" />
+              <div class="ad-box-original">
+                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
               </div>
-              <div class="ad-box">
-                <img src="../assets/logo2.png" alt="" />
+              <div class="ad-box-original">
+                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
               </div>
-              <div class="ad-box">
-                <img src="../assets/logo2.png" alt="" />
+              <div class="ad-box-original">
+                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
               </div>
-              <div class="ad-box">
-                <img src="../assets/logo2.png" alt="" />
+              <div class="ad-box-original">
+                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
               </div>
-              <div class="ad-box">
-                <img src="../assets/logo2.png" alt="" />
+              <div class="ad-box-original">
+                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
               </div>
-              <div class="ad-box">
-                <img src="../assets/logo2.png" alt="" />
+              <div class="ad-box-original">
+                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
               </div>
-              <div class="ad-box">
-                <img src="../assets/logo2.png" alt="" />
+              <div class="ad-box-original">
+                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
               </div>
-              <div class="ad-box">
-                <img src="../assets/logo2.png" alt="" />
+              <div class="ad-box-original">
+                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
               </div>
             </div>
           </div>
         </main>
 
-        <main class="ad-select">
-          <div class="principal-ads">
-            <div class="ad-option">
-              <select>
-                <option>Criar Ideias</option>
-                <option>Criar Ideias</option>
-                <option>Criar Ideias</option>
-                <option>Criar Ideias</option>
+        <main class="ad-select" id="ads">
+          <div class="principal-ads" id="main-ads">
+            <?php
+
+            for ($i = 0; $i < 2; $i++) {
+              echo "
+              <div class='ad-option'>
+              <select id='principal-" . $i . "'>
+              ";
+              foreach ($arrayAnunciantes as $anunciante) {
+                echo "<option value='" . $anunciante["id"] . "'>" . $anunciante["nome"] . "</option>";
+              }
+              echo "
+              <option value='null'>Nenhum</option>
               </select>
+              </div>
+              ";
+            }
+            ?>
+          </div>
+          <?php
+
+          for ($i = 0; $i < 9; $i++) {
+            echo "
+            <div class='ad-option'>
+            <select id='secundario-" . $i + 2 . "'>
+            ";
+            foreach ($arrayAnunciantes as $anunciante) {
+              echo "<option value='" . $anunciante["id"] . "'>" . $anunciante["nome"] . "</option>";
+            }
+            echo "
+            <option value='null'>Nenhum</option>
+            </select>
             </div>
-            <div class="ad-option">
-              <select>
-                <option>Criar Ideias</option>
-                <option>Criar Ideias</option>
-                <option>Criar Ideias</option>
-                <option>Criar Ideias</option>
-              </select>
-            </div>
-          </div>
-          <div class="ad-option">
-            <select>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-            </select>
-          </div>
-          <div class="ad-option">
-            <select>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-            </select>
-          </div>
-          <div class="ad-option">
-            <select>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-            </select>
-          </div>
-          <div class="ad-option">
-            <select>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-            </select>
-          </div>
-          <div class="ad-option">
-            <select>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-            </select>
-          </div>
-          <div class="ad-option">
-            <select>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-            </select>
-          </div>
-          <div class="ad-option">
-            <select>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-            </select>
-          </div>
-          <div class="ad-option">
-            <select>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-            </select>
-          </div>
-          <div class="ad-option">
-            <select>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-              <option>Criar Ideias</option>
-            </select>
-          </div>
+            ";
+          }
+          ?>
         </main>
       </main>
     </main>
@@ -218,12 +150,12 @@ $resultAnunciantes = mysqli_query($con, $sqlAnunciantes);
           <script>
             // Botão de apagar filme
             function handleDeleteAnunciante(id) {
-              window.location.href = `actions/apagarAnunciante.php?id=${id}`;
+              window.location.href = `actions/DELETE/apagarAnunciante.php?id=${id}`;
             };
           </script>
           <?php
 
-          while ($anunciante = mysqli_fetch_array($resultAnunciantes)) {
+          foreach ($arrayAnunciantes as $anunciante) {
             echo ('
             <div class="ad-box-original">
             <img src="../uploads/' . $anunciante["banner"] . '" />
@@ -239,7 +171,7 @@ $resultAnunciantes = mysqli_query($con, $sqlAnunciantes);
         </div>
       </main>
       <main class="ads-right-original">
-        <form method="POST" action="actions/adicionarAnunciante.php" enctype="multipart/form-data">
+        <form method="POST" action="actions/POST/adicionarAnunciante.php" enctype="multipart/form-data">
           <h2>Nome Do Anunciante</h2>
           <input name="nomeAnunciante" class="input-name" type="text" placeholder="Digite o Nome" autocomplete="off" />
           <input name="bannerAnunciante" class="input-file" type="file" placeholder="Adicionar Logo" autocomplete="off" accept="image/*" required />
@@ -249,7 +181,7 @@ $resultAnunciantes = mysqli_query($con, $sqlAnunciantes);
     </main>
 
     <main class="add-film">
-      <form method="POST" action="actions/adicionarFilme.php" enctype="multipart/form-data">
+      <form method="POST" action="actions/POST/adicionarFilme.php" enctype="multipart/form-data">
         <h2>Adicionar Filme</h2>
 
         <label>Nome:</label>
@@ -269,12 +201,12 @@ $resultAnunciantes = mysqli_query($con, $sqlAnunciantes);
         <script>
           // Botão de apagar filme
           function handleDeleteClick(id) {
-            window.location.href = `actions/apagarFilme.php?id=${id}`;
+            window.location.href = `actions/DELETE/apagarFilme.php?id=${id}`;
           };
         </script>
         <?php
 
-        while ($filme = mysqli_fetch_array($resultFilmes)) {
+        foreach ($arrayFilmes as $filme) {
           $data = explode(" ", $filme["dataDeCriacao"])[0];
           $dadosData = explode("-", $data);
           $dataReversa = array_reverse($dadosData);
@@ -292,7 +224,8 @@ $resultAnunciantes = mysqli_query($con, $sqlAnunciantes);
       </main>
     </main>
   </section>
-  <script src="./dashboard.js"></script>
+  <script src="./scripts/dashboard.js"></script>
+  <script src="./scripts/editarTv.js"></script>
 </body>
 
 </html>

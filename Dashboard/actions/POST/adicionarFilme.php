@@ -1,6 +1,6 @@
 <?php
 
-include("../../conexao.php");
+include("../../../conexao.php");
 
 $id = random_int(100000, 999999);
 $nome = mysqli_real_escape_string($con, $_POST["nomeFilme"]);
@@ -8,7 +8,7 @@ $nome = mysqli_real_escape_string($con, $_POST["nomeFilme"]);
 $banner = $_FILES["bannerFilme"];
 $trailer = $_FILES["trailerFilme"];
 
-$pastaAlvo = "../../uploads/";
+$pastaAlvo = "../../../uploads/";
 
 $tipoDoBanner = explode(".", $banner["name"])[1];
 $tipoDoTrailer = explode(".", $trailer["name"])[1];
@@ -46,5 +46,5 @@ if ($sucesso) {
 ?>
 <script>
     window.alert("<?php echo ($mensagem) ?>");
-    window.location.href = "../index.php?adicionarFilme";
+    window.location.href = "../../index.php?adicionarFilme";
 </script>

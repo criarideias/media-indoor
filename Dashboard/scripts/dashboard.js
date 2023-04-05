@@ -30,7 +30,7 @@ if (url.includes("adicionarFilme")) {
   createAdBtn.click();
 }
 
-// Area de edição
+// Triggar os botões de editar para abrir a area de edição
 const editArea = document.querySelector(".edit-area");
 const editarBtns = document.querySelectorAll("#editar-btn");
 const fecharBtn = document.querySelector("#fechar-btn");

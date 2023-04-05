@@ -1,12 +1,12 @@
 <?php
 
-include("../../conexao.php");
+include("../../../conexao.php");
 
 $id = random_int(100000, 999999);
 $nome = mysqli_real_escape_string($con, $_POST["nomeAnunciante"]);
 $banner = $_FILES["bannerAnunciante"];
 
-$pastaAlvo = "../../uploads/";
+$pastaAlvo = "../../../uploads/";
 
 $tipoDoBanner = explode(".", $banner["name"])[1];
 $nomeDoBanner = md5(time()) . "." . $tipoDoBanner;
@@ -33,5 +33,5 @@ if ($sucesso) {
 ?>
 <script>
     window.alert("<?php echo ($mensagem) ?>");
-    window.location.href = "../index.php?adicionarAnunciante";
+    window.location.href = "../../index.php?adicionarAnunciante";
 </script>
