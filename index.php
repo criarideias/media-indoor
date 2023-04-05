@@ -1,3 +1,8 @@
+<?php
+
+include("tvCore.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,60 +17,47 @@
 <body>
   <section class="video-area">
     <div class="img-fundo">
-      <img src="./assets/jhonwick-fundo.png" alt="john wick" />
+      <img id="banner" src="./uploads/<?php echo ($filme["banner"]) ?>" alt="john wick" />
     </div>
     <div class="top-video">
-      <video loop controls src="./assets/john_wick.mp4"></video>
+      <video id="trailer" autoplay controls src="./uploads/<?php echo ($filme["trailer"]) ?>"></video>
     </div>
   </section>
 
   <section class="ad-area">
     <main class="top-area">
       <div class="top-img">
-        <img src="./assets/logo.png" alt="logo" />
+        <img src="./uploads/<?php echo ($anunciantesPrincipais[0]["banner"]) ?>" />
       </div>
       <div class="qr-code-area">
         <div class="qr-code">
           <h2>Anuncie Aqui!</h2>
-          <img src="./assets/qr-code.png" alt="criar ideias" />
+          <img src="./assets/qr-code.png" />
         </div>
       </div>
       <div class="top-img">
-        <img src="./assets/logo_wbr.jpg" alt="wbr" />
+        <img src="./uploads/<?php echo ($anunciantesPrincipais[1]["banner"]) ?>" />
       </div>
     </main>
     <main class="ad-flow">
       <main class="ad-overflow">
-        <div class="ad-box">
-          <img src="./assets/logo.png" alt="criar ideias" />
-        </div>
-        <div class="ad-box">
-          <img src="./assets/logo.png" alt="criar ideias" />
-        </div>
-        <div class="ad-box">
-          <img src="./assets/logo.png" alt="criar ideias" />
-        </div>
-        <div class="ad-box">
-          <img src="./assets/logo.png" alt="criar ideias" />
-        </div>
-        <div class="ad-box">
-          <img src="./assets/logo.png" alt="criar ideias" />
-        </div>
-        <div class="ad-box">
-          <img src="./assets/logo.png" alt="criar ideias" />
-        </div>
-        <div class="ad-box">
-          <img src="./assets/logo.png" alt="criar ideias" />
-        </div>
-        <div class="ad-box">
-          <img src="./assets/logo.png" alt="criar ideias" />
-        </div>
-        <div class="ad-box">
-          <img src="./assets/logo.png" alt="criar ideias" />
-        </div>
+        <?php
+
+        for ($i = 0; $i < 9; $i++) {
+          if (isset($anunciantesSecundarios[$i])) {
+            echo '
+              <div class="ad-box">
+                <img src="./uploads/' . $anunciantesSecundarios[$i]["banner"] . '"  />
+              </div>
+              ';
+          }
+        }
+
+        ?>
       </main>
     </main>
   </section>
+  <script src="tvSlider.js"></script>
 </body>
 
 </html>
