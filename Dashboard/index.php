@@ -30,15 +30,19 @@ include("./actions/GET/getDadosIndex.php");
       <main class="tvs-flow">
         <?php
         while ($tv = $resultTvs->fetch_array()) {
-          $filmeExibido = array_values(array_filter($arrayFilmes, function ($filme) use ($tv) {
-            return $filme["id"] === $tv["filme"];
-          }))[0];
+          $nomeDoFilme = "SLIDER";
 
+          if ($tv["filme"] != "SLIDER") {
+            $filmeExibido = array_values(array_filter($arrayFilmes, function ($filme) use ($tv) {
+              return $filme["id"] === $tv["filme"];
+            }))[0];
+            $nomeDoFilme = $filmeExibido["nome"];
+          }
 
           echo ('
             <div class="tv-box">
             <h2>Tv ' . $tv["id"] . '</h2>
-            <h3>' . $filmeExibido["nome"] . '</h3>
+            <h3>' . $nomeDoFilme . '</h3>
             <button onClick="definirTv(' . $tv["id"] . ')" id="editar-btn">Editar</button>
           </div>
             ');
@@ -55,7 +59,7 @@ include("./actions/GET/getDadosIndex.php");
         <main class="film-select">
           <h2>Escolha o Filme Exibido:</h2>
           <select id="filme-exibido">
-            <option>Slider</option>
+            <option value="SLIDER">Slider</option>
             <?php
             foreach ($arrayFilmes as $filme) {
               echo "<option value='" . $filme["id"] . "'>" . $filme["nome"] . "</option>";
@@ -159,7 +163,7 @@ include("./actions/GET/getDadosIndex.php");
             echo ('
             <div class="ad-box-original">
             <img src="../uploads/' . $anunciante["banner"] . '" />
-            <div class="onoff"></div>
+            <div class="onoff on"></div>
             <button onClick="handleDeleteAnunciante(' . $anunciante["id"] . ')" class="delete">
               <i class="fa-solid fa-trash"></i>
             </button>

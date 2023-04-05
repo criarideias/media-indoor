@@ -51,6 +51,8 @@ async function handleSelectChange(e) {
 const anunciosPrincipaisOptions = [];
 const anunciosSecundariosOptions = [];
 
+const optionsGlobais = [anunciosPrincipaisOptions, anunciosSecundariosOptions];
+
 mainAds.childNodes.forEach((div) => {
   if (div.nodeName !== "DIV") return;
 
@@ -85,7 +87,8 @@ ads.childNodes.forEach((div) => {
   });
 });
 
-const tv = {
+// Variável que armazenará todos os dados úteis da TV
+let tv = {
   id: 0,
   filme: {
     nome: "",
@@ -98,11 +101,16 @@ const tv = {
   },
 };
 
+// Função ativada quando o usuário clica em Editar
 async function definirTv(id) {
   const tvRequest = await fetch(
     `${urlDashboard}actions/GET/getTv.php?id=${id}`
   );
-  const tv = await tvRequest.json();
+  const tvResponse = await tvRequest.json();
+
+  tv = {
+    ...tvResponse,
+  };
 
   // Puxar os dados do filme, caso setado
   if (tv["filme"] !== "SLIDER") {
@@ -117,6 +125,16 @@ async function definirTv(id) {
     img.src = "";
   });
 
+  // Limpa todas as opções
+  optionsGlobais.forEach((categoria) => {
+    categoria.forEach((select) => {
+      select.forEach((option) => {
+        if (option.textContent !== "Nenhum") return (option.selected = false);
+        option.selected = true;
+      });
+    });
+  });
+
   // Setar a opção selecionada de acordo com o filme/slider selecionado
   filmeExibido.childNodes.forEach((option) => {
     if (tv["filme"] === "SLIDER") {
@@ -128,6 +146,7 @@ async function definirTv(id) {
   });
 
   tv.anunciantes.principais.forEach(async (anunciante, index) => {
+    if (anunciante === 0) return;
     const anuncianteRequest = await fetch(
       `${urlDashboard}actions/GET/getAnunciante.php?id=${anunciante}`
     );
@@ -145,6 +164,7 @@ async function definirTv(id) {
   });
 
   tv.anunciantes.secundarios.forEach(async (anunciante, index) => {
+    if (anunciante === 0) return;
     const anuncianteRequest = await fetch(
       `${urlDashboard}actions/GET/getAnunciante.php?id=${anunciante}`
     );
@@ -160,6 +180,57 @@ async function definirTv(id) {
     if (anunciantes[anuncianteResponse.id]) return;
     anunciantes[anuncianteResponse.id] = anuncianteResponse;
   });
-
-  console.log(anunciantes);
 }
+
+// Função que salva a TV
+async function salvarTv() {
+  const filmeSelecionado =
+    filmeExibido.options[filmeExibido.selectedIndex].value;
+  const anunciantesDefinidos = {
+    principais: [],
+    secundarios: [],
+  };
+
+  anunciosPrincipaisOptions.forEach((select) => {
+    select.forEach((option) => {
+      if (!option.selected) return;
+      const idSalvo = option.value === "null" ? 0 : option.value;
+      anunciantesDefinidos.principais.push(idSalvo);
+    });
+  });
+
+  anunciosSecundariosOptions.forEach((select) => {
+    select.forEach((option) => {
+      if (!option.selected) return;
+      const idSalvo = option.value === "null" ? 0 : option.value;
+      anunciantesDefinidos.secundarios.push(idSalvo);
+    });
+  });
+
+  const body = {
+    filme: filmeSelecionado,
+    anunciantes: anunciantesDefinidos,
+  };
+
+  const tvRequest = await fetch(
+    `${urlDashboard}actions/POST/editarTv.php?id=${tv.id}`,
+    {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+      method: "POST",
+    }
+  );
+
+  if (tvRequest.status === 200) {
+    window.alert("TV salva com sucesso!");
+  } else {
+    window.alert("Ocorreu um erro ao tentar salvar essa tv");
+  }
+
+  window.location.href = "index.php";
+}
+
+fecharBtn.addEventListener("click", salvarTv);

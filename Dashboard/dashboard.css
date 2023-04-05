@@ -344,7 +344,7 @@ form {
   box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.3);
 }
 
-.onoff {
+.ads-wrap-original div.onoff {
   position: absolute;
   width: 0.8vw;
   height: 0.8vw;
