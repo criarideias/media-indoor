@@ -64,7 +64,7 @@ body {
 
 
 .ad-area {
-    width: 43vw;
+    width: 48vw;
     z-index: 999;
     height: 100vh;
     position: fixed;
@@ -107,7 +107,7 @@ body {
     flex-direction: column;
     border-radius: 15px;
     padding: 2vh 1vw;
-    margin-left: -6vw;
+    margin-left: 5vw;
 }
 
 .qr-code h2 {
@@ -119,4 +119,48 @@ body {
 .qr-code img {
     width: 10vw;
     margin-top: 1vh;
+}
+
+
+.ad-flow {
+    height: 100vh;
+    background: white;
+    width: 38.3vw;
+    border-bottom-left-radius: 35px;
+    border-top-left-radius: 35px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.ad-collum {
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 2.5vw;
+    position: relative;
+    width: 8vw;
+    align-items: flex-start;
+}
+
+.ad-box {
+    background: rgb(245, 245, 245);
+    width: 13vw;
+    min-width: 13vw;
+    min-height: 12vh;
+    padding: 2vh 2vw;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-90deg);
+    box-shadow: 0 6px 8px rgb(0, 0, 0,0.1);
+}
+
+.ad-box img {
+    width: 95%;
 }
