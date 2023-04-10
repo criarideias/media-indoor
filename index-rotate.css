@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
 
 * {
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-style: initial;
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: none;
-    font-family: Montserrat, sans-serif;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-style: initial;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: none;
+  font-family: Montserrat, sans-serif;
 }
 
 body {
@@ -25,142 +25,154 @@ body {
 }
 
 .video-area {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
 }
 
 .img-fundo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .img-fundo img {
-    width: 60%;
-    transform: rotate(-90deg);
+  width: 60%;
+  -moz-transform: rotate(-90deg); /* FF3.5/3.6 */
+  -o-transform: rotate(-90deg); /* Opera 10.5 */
+  -webkit-transform: rotate(-90deg); /* Saf3.1+ */
+  transform: rotate(-90deg); /* Newer browsers (incl IE9) */
 }
 
 .video {
-    height: 100vh;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .video video {
-    transform: rotate(-90deg);
-    margin-left: 5vw;
-    width: 105%;
+  -moz-transform: rotate(-90deg); /* FF3.5/3.6 */
+  -o-transform: rotate(-90deg); /* Opera 10.5 */
+  -webkit-transform: rotate(-90deg); /* Saf3.1+ */
+  transform: rotate(-90deg); /* Newer browsers (incl IE9) */
+  margin-left: 5vw;
+  width: 105%;
 }
 
-
 .ad-area {
-    width: 48vw;
-    z-index: 999;
-    height: 100vh;
-    position: fixed;
-    right: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+  width: 48vw;
+  z-index: 999;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .top-area {
-    width: 10vw;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
+  width: 10vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .principal-img {
-    width: 100%;
-    height: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .principal-img img {
-    width: 160%;
-    transform: rotate(-90deg);
+  width: 160%;
+  -moz-transform: rotate(-90deg); /* FF3.5/3.6 */
+  -o-transform: rotate(-90deg); /* Opera 10.5 */
+  -webkit-transform: rotate(-90deg); /* Saf3.1+ */
+  transform: rotate(-90deg); /* Newer browsers (incl IE9) */
 }
 
 .qr-code {
-    background: white;
-    box-shadow: 0 15px 10px rgb(0, 0, 0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(-90deg);
-    flex-direction: column;
-    border-radius: 15px;
-    padding: 2vh 1vw;
-    margin-left: 5vw;
+  background: white;
+  box-shadow: 0 15px 10px rgb(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-transform: rotate(-90deg); /* FF3.5/3.6 */
+  -o-transform: rotate(-90deg); /* Opera 10.5 */
+  -webkit-transform: rotate(-90deg); /* Saf3.1+ */
+  transform: rotate(-90deg); /* Newer browsers (incl IE9) */
+
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 2vh 1vw;
+  margin-left: 5vw;
 }
 
 .qr-code h2 {
-    font-size: 1.1vw;
-    font-weight: 900;
-    
+  font-size: 1.1vw;
+  font-weight: 900;
 }
 
 .qr-code img {
-    width: 10vw;
-    margin-top: 1vh;
+  width: 10vw;
+  margin-top: 1vh;
 }
-
 
 .ad-flow {
-    height: 100vh;
-    background: white;
-    width: 38.3vw;
-    border-bottom-left-radius: 35px;
-    border-top-left-radius: 35px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+  height: 100vh;
+  background: white;
+  width: 38.3vw;
+  border-bottom-left-radius: 35px;
+  border-top-left-radius: 35px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-
 .ad-collum {
-    height: 98vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-left: 2.5vw;
-    position: relative;
-    width: 8vw;
-    align-items: flex-start;
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 2.5vw;
+  position: relative;
+  width: 8vw;
+  align-items: flex-start;
 }
 
 .ad-box {
-    background: rgb(245, 245, 245);
-    width: 13vw;
-    min-width: 13vw;
-    min-height: 12vh;
-    padding: 2vh 2vw;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(-90deg);
-    box-shadow: 0 6px 8px rgb(0, 0, 0,0.1);
+  background: rgb(245, 245, 245);
+  width: 13vw;
+  min-width: 13vw;
+  min-height: 12vh;
+  padding: 2vh 2vw;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-transform: rotate(-90deg); /* FF3.5/3.6 */
+  -o-transform: rotate(-90deg); /* Opera 10.5 */
+  -webkit-transform: rotate(-90deg); /* Saf3.1+ */
+  transform: rotate(-90deg); /* Newer browsers (incl IE9) */
+  box-shadow: 0 6px 8px rgb(0, 0, 0, 0.1);
 }
 
 .ad-box img {
-    width: 95%;
+  width: 95%;
 }
