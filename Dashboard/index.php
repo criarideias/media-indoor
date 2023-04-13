@@ -71,36 +71,36 @@ include("./actions/getDadosIndex.php");
             <h2>Preview Anunciantes</h2>
             <div class="ad-flow">
               <div class="principal-ads">
-                <img id="anunciante-thumb" src="../assets/logo.png" />
-                <img id="anunciante-thumb" src="../assets/logo_wbr.jpg" />
+                <img id="anunciante-thumb" src="../assets/img/logo.png" />
+                <img id="anunciante-thumb" src="../assets/img/logo_wbr.jpg" />
               </div>
 
               <div class="ad-box-original">
-                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
+                <img id="anunciante-thumb" src="../assets/img/logo2.png" alt="" />
               </div>
               <div class="ad-box-original">
-                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
+                <img id="anunciante-thumb" src="../assets/img/logo2.png" alt="" />
               </div>
               <div class="ad-box-original">
-                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
+                <img id="anunciante-thumb" src="../assets/img/logo2.png" alt="" />
               </div>
               <div class="ad-box-original">
-                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
+                <img id="anunciante-thumb" src="../assets/img/logo2.png" alt="" />
               </div>
               <div class="ad-box-original">
-                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
+                <img id="anunciante-thumb" src="../assets/img/logo2.png" alt="" />
               </div>
               <div class="ad-box-original">
-                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
+                <img id="anunciante-thumb" src="../assets/img/logo2.png" alt="" />
               </div>
               <div class="ad-box-original">
-                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
+                <img id="anunciante-thumb" src="../assets/img/logo2.png" alt="" />
               </div>
               <div class="ad-box-original">
-                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
+                <img id="anunciante-thumb" src="../assets/img/logo2.png" alt="" />
               </div>
               <div class="ad-box-original">
-                <img id="anunciante-thumb" src="../assets/logo2.png" alt="" />
+                <img id="anunciante-thumb" src="../assets/img/logo2.png" alt="" />
               </div>
             </div>
           </div>
