@@ -89,6 +89,10 @@ body {
   flex-direction: column;
 }
 
+.top-video {
+  z-index: 99;
+}
+
 .principal-img {
   width: 100%;
   height: 30%;
