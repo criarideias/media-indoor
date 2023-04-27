@@ -50,7 +50,7 @@ body {
   transform: rotate(-90deg); /* Newer browsers (incl IE9) */
 }
 
-.video {
+.top-video {
   height: 100vh;
   width: 50%;
   display: flex;
@@ -59,7 +59,7 @@ body {
   position: relative;
 }
 
-.video video {
+.top-video video {
   -moz-transform: rotate(-90deg); /* FF3.5/3.6 */
   -o-transform: rotate(-90deg); /* Opera 10.5 */
   -webkit-transform: rotate(-90deg); /* Saf3.1+ */
@@ -147,6 +147,10 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+}
+
+.ad-overflow {
+  display: flex;
 }
 
 .ad-collum {

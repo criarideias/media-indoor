@@ -1,6 +1,6 @@
 <?php
 
-include("../../conexao.php");
+include("../../db/conexao.php");
 
 $id = mysqli_real_escape_string($con, $_GET["id"]);
 

@@ -1,6 +1,6 @@
 <?php
 
-include("../conexao.php");
+include("../db/conexao.php");
 
 $sqlFilmes = "SELECT * FROM `filmes`";
 $resultFilmes = mysqli_query($con, $sqlFilmes);

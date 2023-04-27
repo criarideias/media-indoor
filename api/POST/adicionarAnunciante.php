@@ -1,6 +1,6 @@
 <?php
 
-include("../../conexao.php");
+include("../../db/conexao.php");
 
 $id = random_int(100000, 999999);
 $nome = mysqli_real_escape_string($con, $_POST["nomeAnunciante"]);
