@@ -6,7 +6,7 @@
 
 $host = "localhost";
 $user = "root";
-$password = "";
-$db = "tvs01";
+$password = "root";
+$db = "tvs";
 
 $con = mysqli_connect($host, $user, $password, $db) or die("Não foi possível conectar-se ao Banco de Dados");
