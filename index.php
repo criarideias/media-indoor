@@ -27,18 +27,31 @@ include("tvCore.php");
 
   <section class="ad-area">
     <main class="top-area">
-      <div class="top-img">
-        <img src="./uploads/<?php echo ($anunciantesPrincipais[0]["banner"]) ?>" />
-      </div>
+      <?php
+      if (isset($anunciantesPrincipais[0])) {
+        echo '
+        <div class="top-img">
+          <img src="./uploads/' . $anunciantesPrincipais[0]["banner"] . '" />
+        </div>
+        ';
+      }
+      ?>
+
       <div class="qr-code-area">
         <div class="qr-code">
           <h2>Anuncie Aqui!</h2>
           <img src="./assets/img/qr-code.png" />
         </div>
       </div>
-      <div class="top-img">
-        <img src="./uploads/<?php echo ($anunciantesPrincipais[1]["banner"]) ?>" />
-      </div>
+      <?php
+      if (isset($anunciantesPrincipais[1])) {
+        echo '
+        <div class="top-img">
+          <img src="./uploads/' . $anunciantesPrincipais[1]["banner"] . '" />
+        </div>
+        ';
+      }
+      ?>
     </main>
     <main class="ad-flow">
       <main class="ad-overflow">
@@ -51,6 +64,12 @@ include("tvCore.php");
                 <img src="./uploads/' . $anunciantesSecundarios[$i]["banner"] . '"  />
               </div>
               ';
+          } else {
+            echo '
+            <div class="ad-box">
+              <img src=""  />
+            </div>
+            ';
           }
         }
 

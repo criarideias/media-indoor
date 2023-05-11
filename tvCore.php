@@ -43,5 +43,7 @@ foreach ($anunciantesIds->secundarios as $anuncianteID) {
         $sqlAnunciante = "SELECT * FROM `anunciantes` WHERE `id` = '$anuncianteID'";
         $resultAnunciante = mysqli_query($con, $sqlAnunciante);
         $anunciantesSecundarios[] = mysqli_fetch_array($resultAnunciante);
+    } else {
+        $anunciantesSecundarios[] = null;
     }
 }
