@@ -50,7 +50,7 @@ body {
   transform: rotate(-90deg); /* Newer browsers (incl IE9) */
 }
 
-.top-video {
+.topvideo {
   height: 100vh;
   width: 50%;
   display: flex;
@@ -64,8 +64,8 @@ body {
   -o-transform: rotate(-90deg); /* Opera 10.5 */
   -webkit-transform: rotate(-90deg); /* Saf3.1+ */
   transform: rotate(-90deg); /* Newer browsers (incl IE9) */
-  margin-left: 5vw;
-  width: 105%;
+  margin-left: 1.5vw;
+  width: 57%;
 }
 
 .ad-area {
@@ -147,10 +147,12 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  
 }
 
 .ad-overflow {
   display: flex;
+  align-items: center;
 }
 
 .ad-collum {
@@ -158,16 +160,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-left: 2.5vw;
+  margin-left: 3vw;
   position: relative;
   width: 8vw;
   align-items: flex-start;
 }
 
 .ad-box {
-  background: rgb(245, 245, 245);
-  width: 13vw;
-  min-width: 13vw;
+  background: rgb(215, 215, 215);
+  min-width: 11vw;
   min-height: 12vh;
   padding: 2vh 2vw;
   border-radius: 15px;
@@ -178,7 +179,7 @@ body {
   -o-transform: rotate(-90deg); /* Opera 10.5 */
   -webkit-transform: rotate(-90deg); /* Saf3.1+ */
   transform: rotate(-90deg); /* Newer browsers (incl IE9) */
-  box-shadow: 0 6px 8px rgb(0, 0, 0, 0.1);
+  box-shadow: 0 6px 8px rgb(0, 0, 0, 0.3);
 }
 
 .ad-box img {
