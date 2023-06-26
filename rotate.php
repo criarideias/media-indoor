@@ -79,7 +79,7 @@ include("tvCore.php");
             </main>
         </main>
     </section>
-    <script src="tvSlider.js"></script>
+    <script src="assets/js/tvSlider.js"></script>
 </body>
 
 </html>
