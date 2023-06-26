@@ -37,7 +37,7 @@ include("tvCore.php");
             </div>
             <div class="qr-code">
                 <h2>Anuncie Aqui!</h2>
-                <img src="./assets/qr-code.png" />
+                <img src="./assets/img/qr-code.png" />
             </div>
             <div class="principal-img">
                 <?php
